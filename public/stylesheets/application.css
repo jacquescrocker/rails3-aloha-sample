@@ -16,7 +16,7 @@ a.nav {
   float:right;
   font-size:14px;
   margin-bottom:20px;
-  margin-right:28px;
+  margin-right:19px;
   margin-top:-30px;
   padding:10px 20px;
 }
@@ -24,4 +24,9 @@ a.nav {
 .error {
   background-color: red;
   color: #fff;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
 }

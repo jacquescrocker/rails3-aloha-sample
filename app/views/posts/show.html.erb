@@ -2,5 +2,5 @@
 
 <% content_for :admin do %>
   <%= link_to "Edit Post", edit_post_path(@post), :class => "nav" %>
-  <%= link_to "Delete Post", post_path(@post), :method => :delete, :class => "nav" %>
+  <%= link_to "Delete Post", post_path(@post), :method => :delete, :class => "nav", :confirm => "Are you sure you want to delete this post" %>
 <% end %>
