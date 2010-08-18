@@ -32,7 +32,6 @@ group :test do
   gem 'rspec-rails'
   gem "database_cleaner"
   gem "remarkable_mongoid"
-  gem "faker"
   gem "capybara"
   gem "launchy"
 end
@@ -40,4 +39,5 @@ end
 group :development, :test do
   gem 'ruby-debug'
   gem "mongrel"
+  gem "faker"
 end

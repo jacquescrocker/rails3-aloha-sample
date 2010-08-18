@@ -22,11 +22,17 @@ Bundle (to install dependencies):
 
     bundle install
 
+Add some starting data (optional):
+
+    rake db:seed
+
 Start the Server:
 
     rails server
 
 Go to http://localhost:3000
+
+Username/password is set within config/settings.yml (default: admin/admin)
 
 
 Howto Test
