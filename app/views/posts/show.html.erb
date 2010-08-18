@@ -1,1 +1,5 @@
 <%= render "post", :post => @post, :full => true %>
+
+<% content_for :admin do %>
+  <%= link_to "Delete Post", post_path(@post), :method => :delete, :class => "nav" %>
+<% end %>

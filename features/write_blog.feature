@@ -21,11 +21,14 @@ Feature: Write blog
       And I should see "My new Post" within ".post h2"
       And I should see some content within ".post .body"
 
-
-
-
-
-
+  Scenario: Delete a Blog Post
+    Given there are 3 blog posts
+      And there is a blog post titled "Something Something" posted today
+    When  I go to the Post Page for "Something Something"
+      And I follow "Delete Post"
+    Then  I should see "Post has been deleted"
+      And I should be on the Home Page
+      And I should not see "Something Something" within ".post h2"
 
 
 

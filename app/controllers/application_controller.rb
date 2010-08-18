@@ -5,4 +5,13 @@ class ApplicationController < ActionController::Base
   def admin?
     session[:admin]
   end
+
+  def admin_required
+    if session[:admin]
+      return true
+    else
+      flash[:notice] = "Please log in to edit this blog"
+      redirect_to login_url
+    end
+  end
 end
