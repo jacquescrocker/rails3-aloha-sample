@@ -42,11 +42,17 @@ GEM
     arel (0.4.0)
       activesupport (>= 3.0.0.beta)
     bson (1.0.4)
+    bson_ext (1.0.4)
     builder (2.1.2)
+    cgi_multipart_eof_fix (2.5.0)
     columnize (0.3.1)
+    daemons (1.1.0)
+    database_cleaner (0.5.2)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    fastthread (1.0.7)
+    gem_plugin (0.2.3)
     i18n (0.4.1)
     linecache (0.43)
     mail (2.2.5)
@@ -56,6 +62,11 @@ GEM
     mime-types (1.16)
     mongo (1.0.7)
       bson (>= 1.0.4)
+    mongrel (1.1.5)
+      cgi_multipart_eof_fix (>= 2.4)
+      daemons (>= 1.0.3)
+      fastthread (>= 1.0.1)
+      gem_plugin (>= 0.2.3)
     nokogiri (1.4.3.1)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -77,6 +88,13 @@ GEM
       rake (>= 0.8.3)
       thor (~> 0.14.0)
     rake (0.8.7)
+    remarkable (4.0.0.alpha4)
+      rspec (>= 2.0.0.alpha11)
+    remarkable_activemodel (4.0.0.alpha4)
+      remarkable (~> 4.0.0.alpha4)
+      rspec (>= 2.0.0.alpha11)
+    remarkable_mongoid (0.4.0)
+      remarkable_activemodel (>= 4.0.0.alpha2)
     rspec (2.0.0.beta.19)
       rspec-core (= 2.0.0.beta.19)
       rspec-expectations (= 2.0.0.beta.19)
@@ -107,7 +125,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bson_ext
+  database_cleaner
   mongoid!
+  mongrel
   rails (= 3.0.0.rc)
+  remarkable_mongoid
   rspec-rails
   ruby-debug

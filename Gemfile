@@ -13,6 +13,7 @@ gem 'rails', '3.0.0.rc'
 
 # gem "mongoid", "2.0.0.beta.15"
 gem "mongoid", :git => "http://github.com/durran/mongoid.git"
+gem "bson_ext"
 
 # Bundle the extra gems:
 # gem 'bj'
@@ -25,9 +26,11 @@ gem "mongoid", :git => "http://github.com/durran/mongoid.git"
 # and rake tasks are available in development mode:
 group :test do
   gem 'rspec-rails'
+  gem "database_cleaner"
+  gem "remarkable_mongoid"
 end
 
 group :development, :test do
-  # To use debugger
   gem 'ruby-debug'
+  gem "mongrel"
 end
