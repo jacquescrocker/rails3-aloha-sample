@@ -18,7 +18,14 @@ GENTICS.Aloha.settings = {
 
 jQuery(document).ready(function($) {
 
+  $(".post-editable").each(function(index) {
 
-  $('.aloha').aloha();
+    var self = $(this);
+    var postId = self.attr("data-id");
+    var postField = self.attr("data-field");
+
+    // add callbacks to update post data fields:
+    self.aloha()
+  });
 
 });

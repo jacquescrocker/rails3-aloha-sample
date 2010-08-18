@@ -2,9 +2,9 @@
   <div class="date" title="<%= post.created_at.strftime("%A %B %d, %Y at %I:%M %p %Z") %>">
     <%= post.created_at.strftime("%b") %><br /><%= post.created_at.strftime("%d") %>
   </div>
-  <h2 class="title"><%= post.title %></h2>
+  <h2 class="title post-editable" data-id="<%= post.id %>" data-field="title"><%= post.title %></h2>
   <div class="body">
-    <div class="aloha">
+    <div class="post-editable" data-id="<%= post.id %>" data-field="body">
       <%= post.body %>
     </div>
 
