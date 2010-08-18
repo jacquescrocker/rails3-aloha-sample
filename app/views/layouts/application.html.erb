@@ -6,7 +6,12 @@
   <%= javascript_include_tag "jquery", "rails", "application" %>
 
   <% if admin? %>
+    <script type="text/javascript" src="/aloha/aloha.js"></script>
+    <script type="text/javascript" src="/aloha/plugins/com.gentics.aloha.plugins.Format/plugin.js"></script>
+    <script type="text/javascript" src="/aloha/plugins/com.gentics.aloha.plugins.Table/plugin.js"></script>
+    <script type="text/javascript" src="/aloha/plugins/com.gentics.aloha.plugins.List/plugin.js"></script>
 
+    <%= javascript_include_tag "inline_editing" %>
   <% end %>
 
   <%= csrf_meta_tag %>
