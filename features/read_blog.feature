@@ -1,4 +1,4 @@
-Feature: Blog
+Feature: Read Blog
   In order to learn some l33t knowledge
   As a web visitor
   I want to read a blog full of l33t content
@@ -18,3 +18,9 @@ Feature: Blog
       And there is a blog post titled "Latest" posted today
     When  I go to the Home Page
     Then  I should see the post "Latest" before the post "Hello World"
+
+  Scenario: Click on "Read Post" to see a Blog Post
+    Given there is a blog post titled "Hello World" posted today
+    When  I go to the Home Page
+      And I follow "read post" within ".post"
+    Then  I should be on the Post Page for "Hello World"

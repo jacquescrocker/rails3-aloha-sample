@@ -6,6 +6,11 @@ Feature: Write blog
   Background:
     Given I'm a blog owner
 
+  Scenario: Click New Post
+    When  I go to the Home Page
+     And  I follow "New Post"
+    Then  I should be on the New Post Page
+
   Scenario: Create a Blog Post
     When  I go to the New Post Page
       And I fill in "Title" with "My new Post"
@@ -15,6 +20,8 @@ Feature: Write blog
       And I should see "Post successful" within ".flash"
       And I should see "My new Post" within ".post h2"
       And I should see some content within ".post .body"
+
+
 
 
 

@@ -5,6 +5,9 @@
       <div class="body">
         <%= post.body %>
       </div>
+      <div class="panel">
+        <%= link_to "read post", post_path(post) %>
+      </div>
     </div>
   <% end %>
 
@@ -14,3 +17,9 @@
     </p>
   <% end %>
 </div>
+
+<% if admin? %>
+  <div class="admin">
+    <%= link_to "New Post", new_post_path %>
+  </div>
+<% end %>

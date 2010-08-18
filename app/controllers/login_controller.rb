@@ -4,7 +4,7 @@ class LoginController < ApplicationController
 
   def create
     if params[:login] == Settings.blog_login && params[:password] == Settings.blog_password
-      session[:logged_in] = true
+      session[:admin] = true
       redirect_to root_url
     else
       @login_error = "Invalid login"
