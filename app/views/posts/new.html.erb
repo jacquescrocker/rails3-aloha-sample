@@ -1,13 +1,2 @@
 <h2>Create a new post</h2>
-<%= form_for @post do |f| %>
-  <p class="field">
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title %>
-  </p>
-  <p class="field">
-    <%= f.label :body, "Body" %>
-    <%= f.text_area :body %>
-  </p>
-
-  <%= f.submit "Submit" %>
-<% end %>
+<%= render "form" %>

@@ -20,6 +20,10 @@ module NavigationHelpers
     when /the Post Page for "([^"]*)"$/
       post = Post.where(:title => $1).first
       post_path(post)
+    when /the Edit Post Page for "([^"]*)"$/
+      post = Post.where(:title => $1).first
+      edit_post_path(post)
+
     else
       begin
         page_name =~ /the (.*) page/

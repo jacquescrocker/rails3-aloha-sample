@@ -4,6 +4,11 @@
   <title><%= Settings.title %></title>
   <%= stylesheet_link_tag "bipolar", "application" %>
   <%= javascript_include_tag "jquery", "rails", "application" %>
+
+  <% if admin? %>
+
+  <% end %>
+
   <%= csrf_meta_tag %>
 </head>
 <body>

@@ -15,8 +15,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    post_params = params[:post].slice(:title, :body) if params[:post]
-
     @post = Post.new(post_params || {})
 
     if @post.save
@@ -27,11 +25,34 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      flash[:notice] = "Post has been updated"
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = "Post has been deleted"
     redirect_to root_url
+  end
+
+  protected
+  def post_params
+    if params[:post]
+      params[:post].slice(:title, :body)
+    else
+      {}
+    end
   end
 
 end

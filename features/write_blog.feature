@@ -30,5 +30,21 @@ Feature: Write blog
       And I should be on the Home Page
       And I should not see "Something Something" within ".post h2"
 
+  Scenario: Edit a Blog Post
+    Given there is a blog post titled "Something Something" posted today
+    When  I go to the Post Page for "Something Something"
+      And I follow "Edit Post"
+    Then  I should be on the Edit Post Page for "Something Something"
+
+  Scenario: Update a Blog Post
+    Given there is a blog post titled "Something Something" posted today
+    When  I go to the Edit Post Page for "Something Something"
+     And  I fill in "Title" with "Another Something"
+     And  I fill in "Body" with some content
+     And  I press "Submit"
+    Then  I should be on the Post Page for "Another Something"
+     And  I should see "Post has been updated"
+     And  I should see "Another Something" within ".post h2"
+     And  I should see some content within ".post .body"
 
 
