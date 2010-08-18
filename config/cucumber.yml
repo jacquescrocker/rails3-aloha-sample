@@ -1,0 +1,3 @@
+default: features --format pretty --color --tags ~@todo --no-source
+dev: features --format pretty --color --tags ~@todo
+todo: --tags @todo features

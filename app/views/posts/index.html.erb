@@ -1,0 +1,16 @@
+<div class="posts">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <h2><%= post.title %></h2>
+      <div class="body">
+        <%= post.body %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @posts.empty? %>
+    <p class="empty">
+      No posts yet!
+    </p>
+  <% end %>
+</div>

@@ -14,6 +14,8 @@ gem 'rails', '3.0.0.rc'
 # gem "mongoid", "2.0.0.beta.15"
 gem "mongoid", :git => "http://github.com/durran/mongoid.git"
 gem "bson_ext"
+gem "capybara"
+
 
 # Bundle the extra gems:
 # gem 'bj'
@@ -25,9 +27,11 @@ gem "bson_ext"
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :test do
+  gem "cucumber-rails"
   gem 'rspec-rails'
   gem "database_cleaner"
   gem "remarkable_mongoid"
+  gem "faker"
 end
 
 group :development, :test do
