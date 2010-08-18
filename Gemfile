@@ -15,6 +15,8 @@ gem 'rails', '3.0.0.rc'
 gem "mongoid", :git => "http://github.com/durran/mongoid.git"
 gem "bson_ext"
 
+gem "rails_config"
+
 
 # Bundle the extra gems:
 # gem 'bj'

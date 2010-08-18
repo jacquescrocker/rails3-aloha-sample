@@ -11,12 +11,15 @@ module NavigationHelpers
     when /the home\s?page/i
       '/'
 
-    # Add more mappings here.
-    # Here is an example that pulls values out of the Regexp:
-    #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
+    when /the login page/i
+      '/login'
 
+    when /the new post page/i
+      new_post_path
+
+    when /the Post Page for "([^"]*)"$/
+      post = Post.where(:title => $1).first
+      post_path(post)
     else
       begin
         page_name =~ /the (.*) page/
