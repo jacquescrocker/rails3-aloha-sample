@@ -13,9 +13,8 @@ Feature: Blog
     When I go to the Home Page
     Then I should not see any posts listed
 
-  @todo
   Scenario: Posts should be ordered by most recent first
-    Given there is a blog post titled "First Post!" posted yesterday
-      And there is a blog post titled "Latest Post" posted today
+    Given there is a blog post titled "Hello World" posted yesterday
+      And there is a blog post titled "Latest" posted today
     When  I go to the Home Page
-    Then  I should see the post "Latest" before the post "First Post!"
+    Then  I should see the post "Latest" before the post "Hello World"

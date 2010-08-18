@@ -14,7 +14,6 @@ gem 'rails', '3.0.0.rc'
 # gem "mongoid", "2.0.0.beta.15"
 gem "mongoid", :git => "http://github.com/durran/mongoid.git"
 gem "bson_ext"
-gem "capybara"
 
 
 # Bundle the extra gems:
@@ -32,6 +31,8 @@ group :test do
   gem "database_cleaner"
   gem "remarkable_mongoid"
   gem "faker"
+  gem "capybara"
+  gem "launchy"
 end
 
 group :development, :test do
