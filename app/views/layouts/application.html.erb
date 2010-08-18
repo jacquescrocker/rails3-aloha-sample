@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rails3AlohaSample</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <title><%= Settings.title %></title>
+  <%= stylesheet_link_tag "bipolar", "application" %>
+  <%= javascript_include_tag "jquery", "rails", "application" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-  <% if flash[:notice] %>
-    <div class="flash">
-      <%= flash[:notice] %>
+  <div id="left">
+    <div id="outer">
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+
+      <img class="lime" src="/images/lime.jpg" alt="" /><h1><span class="green">b</span>i<span class="yellow">p</span>olar</h1><br /><br />
+
+      <%= link_to "Home", root_url, :class => "nav" %>
+
+      <%# more content links
+        <a class="nav" href="#">About</a>
+        <a class="nav" href="#">Blog</a>
+        <a class="nav" href="#">Contact</a>
+      %>
+
+      <% if admin? %>
+        <div class="admin">
+          <%= yield :admin %>
+        </div>
+      <% else %>
+        <%= link_to "Login", login_path, :class => "nav" %>
+      <% end %>
+
     </div>
-  <% end %>
 
-  <%= yield %>
 
+  </div>
+
+  <div id="main">
+    <%= yield %>
+  </div>
 </body>
 </html>

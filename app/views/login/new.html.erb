@@ -1,4 +1,9 @@
 <%= form_tag "/login", :method => :post do %>
+  <% if @login_error %>
+    <p class="error">
+      <%= @login_error %>
+    </p>
+  <% end %>
   <p class="field">
     <%= label_tag :login, "Login" %>
     <%= text_field_tag :login, params[:login] %>

@@ -1,7 +1,7 @@
 Rails3AlohaSample::Application.routes.draw do
   resources :posts
 
-  get "login" => "login#new"
+  get "login" => "login#new", :as => :login
   post "login" => "login#create"
 
   # The priority is based upon order of creation:

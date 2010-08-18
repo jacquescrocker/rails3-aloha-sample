@@ -19,7 +19,7 @@
 </div>
 
 <% if admin? %>
-  <div class="admin">
-    <%= link_to "New Post", new_post_path %>
-  </div>
+  <% content_for :admin do %>
+    <%= link_to "New Post", new_post_path, :class => "nav" %>
+  <% end %>
 <% end %>
