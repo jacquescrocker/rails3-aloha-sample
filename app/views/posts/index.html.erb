@@ -1,14 +1,6 @@
 <div class="posts">
   <% @posts.each do |post| %>
-    <div class="post">
-      <h2><%= post.title %></h2>
-      <div class="body">
-        <%= post.body %>
-      </div>
-      <div class="panel">
-        <%= link_to "read post", post_path(post) %>
-      </div>
-    </div>
+    <%= render "post", :post => post %>
   <% end %>
 
   <% if @posts.empty? %>

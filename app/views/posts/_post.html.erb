@@ -1,0 +1,15 @@
+<div class="post">
+  <div class="date" title="<%= post.created_at.strftime("%A %B %d, %Y at %I:%M %p %Z") %>">
+    <%= post.created_at.strftime("%b") %><br /><%= post.created_at.strftime("%d") %>
+  </div>
+  <h2 class="title"><%= post.title %></h2>
+  <div class="body">
+    <%= post.body %>
+
+    <% unless local_assigns[:full] %>
+      <p class="panel">
+        <%= link_to "read more...", post_path(post) %>
+      </p>
+    <% end %>
+  </div>
+</div>

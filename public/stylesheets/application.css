@@ -3,7 +3,11 @@
 }
 
 a.nav {
-  text-transform: downcase;
+  text-transform: lowercase;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  float: right;
+  clear: right;
 }
 
 .flash {
